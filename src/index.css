@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 142, 125, 190;
+  --color-secondary: 166, 214, 214;
+  --color-accent: 247, 207, 216;
+  --color-background: 244, 248, 211;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  @apply bg-gray-50;
+}
+
+@layer components {
+  .loader {
+    @apply w-8 h-8 border-4 border-primary-light rounded-full border-t-primary animate-spin;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary-light focus:ring-opacity-50;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-secondary text-gray-800 rounded-md hover:bg-secondary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-secondary-light focus:ring-opacity-50;
+  }
+
+  .btn-accent {
+    @apply px-4 py-2 bg-accent text-gray-800 rounded-md hover:bg-accent-dark transition-colors focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-opacity-50;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-card overflow-hidden;
+  }
+
+  .form-group {
+    @apply mb-4;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .error-message {
+    @apply text-red-500 text-sm mt-1;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-gray-900 mb-6;
+  }
+
+  /* Animation classes */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  .slide-in-bottom {
+    animation: slideInBottom 0.5s ease-out;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+
+  .zoom-in {
+    animation: zoomIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInBottom {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
